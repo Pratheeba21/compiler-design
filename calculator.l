@@ -1,9 +1,7 @@
 %{
 #include <stdio.h>
 %}
-
 DIGIT [0-9]
-
 %%
 {DIGIT}+        { printf("Number: %s\n", yytext); }
 "+"             { printf("Operator: +\n"); }
@@ -12,7 +10,6 @@ DIGIT [0-9]
 \n              ; // Ignore newlines
 .               { printf("Invalid character: %s\n", yytext); }
 %%
-
 int main() {
     yylex();
     return 0;
